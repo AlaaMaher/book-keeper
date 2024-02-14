@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -36,7 +35,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -47,7 +45,6 @@ import com.jetpackcompose.book_keeper.room.BooksEntity
 import com.jetpackcompose.book_keeper.screens.UpdateScreen
 import com.jetpackcompose.book_keeper.ui.theme.BookkeeperTheme
 import com.jetpackcompose.book_keeper.viewModel.BooksViewModel
-import kotlinx.coroutines.flow.collect
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -181,7 +178,7 @@ fun BookCard(viewModel: BooksViewModel, book: BooksEntity, navHostController: Na
 fun BooksList(viewModel: BooksViewModel, navHostController: NavHostController){
     val  books by viewModel.books.collectAsState(initial = emptyList())
 
-    LazyColumn(){
+    LazyColumn{
      items(books){
          item -> BookCard(viewModel = viewModel, book = item, navHostController)
      }
