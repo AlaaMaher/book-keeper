@@ -6,13 +6,23 @@ import com.jetpackcompose.book_keeper.repository.Repository
 import com.jetpackcompose.book_keeper.room.BooksEntity
 import kotlinx.coroutines.launch
 
-class BooksViewModel(val repository: Repository):ViewModel() {
+class BooksViewModel(val repository: Repository) : ViewModel() {
 
-    fun addBook(booksEntity: BooksEntity){
+    fun addBook(booksEntity: BooksEntity) {
         viewModelScope.launch {
             repository.addBook(booksEntity)
         }
     }
 
-    fun getAllBooks() = repository.getAllBooks()
+    val books = repository.getAllBooks()
+
+    fun deleteBook(booksEntity: BooksEntity) {
+        viewModelScope.launch { repository.deleteBook(booksEntity) }
+    }
+
+    fun updateBook(booksEntity: BooksEntity){
+        viewModelScope.launch {
+            repository.updateBook(booksEntity)
+        }
+    }
 }
