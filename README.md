@@ -10,8 +10,10 @@ BookKeeper is an Android application designed to save books. It utilizes the Roo
 
 ## Screenshots
 
-![1](https://github.com/AlaaMaher/book-keeper/assets/16047640/60419597-f0ac-4f22-bcbc-f4c61f02f41b)
-![2](https://github.com/AlaaMaher/book-keeper/assets/16047640/508474ad-21a4-42a0-8c11-de0bec914320)
+<p align="center">
+  <img src="https://github.com/AlaaMaher/book-keeper/assets/16047640/60419597-f0ac-4f22-bcbc-f4c61f02f41b" width="350" title="1">
+  <img src="https://github.com/AlaaMaher/book-keeper/assets/16047640/508474ad-21a4-42a0-8c11-de0bec914320" width="350" alt="2">
+</p>
 
 ## Libraries Used
 
